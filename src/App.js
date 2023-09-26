@@ -1,7 +1,10 @@
 import "./styles.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Products from "./Components/Products";
+<<<<<<< HEAD
 console.log('projects');
+=======
+>>>>>>> 9b89d4eadb38faf26aa58b2b52b9ac439e23f76f
 
 
 
