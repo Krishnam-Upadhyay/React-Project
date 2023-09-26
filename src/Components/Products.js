@@ -7,10 +7,12 @@ const style = {
     fontSize: 14
 }
 
-let isAvailable = 'Available';
-let badgeClass = 'badge-margin-left-240 badge ';
+
 
 const Products = (props) => {
+
+
+    let badgeClass = 'badge-margin-left-240 badge ';
 
     return (<ul class="list-group shadow">
         <li className="list-group-item">
@@ -23,7 +25,7 @@ const Products = (props) => {
                         <button type="button" className="btn btn-primary">-</button>
                         <span style={style}>{productCont}</span>
                         <button type="button" className="btn btn-primary">+</button>
-                        <span className={badgeClass + (isAvailable === 'Available' ? 'bg-success' : 'bg-danger')}>{props.isAvailable ? "Available" : "UnAvailable"}</span>
+                        <span className={badgeClass + (props.isAvailable ? 'bg-success' : 'bg-danger')}>{props.isAvailable ? "Available" : "UnAvailable"}</span>
                     </div>
                 </div><img src={props.imageUrl} alt="Generic placeholder image" width="200" height='200' class="ml-lg-5 order-1 order-lg-2" />
             </div>
