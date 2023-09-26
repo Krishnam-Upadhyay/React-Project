@@ -1,6 +1,7 @@
 import "./styles.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Products from "./Components/Products";
+console.log('projects');
 
 
 
