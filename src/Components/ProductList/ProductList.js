@@ -7,7 +7,7 @@ const ProductList = (props) => {
     return <div className="row">
         <div className="col-lg-8 mx-auto">
             <ul class="list-group shadow">
-                {products.map((product) => {
+                {props.products.map((product) => {
                     return <Products
                         id={product?.pID}
                         name={product?.pName}
