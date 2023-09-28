@@ -74,6 +74,8 @@ const ProductForm = (props) => {
             pavailable: true,
             pimageUrl: ''
         });
+        props.onCanel();
+
 
 
     }
@@ -125,6 +127,7 @@ const ProductForm = (props) => {
 
 
             <button type="submit" className="btn btn-primary">Add Product</button>
+            <button type="button" onClick={props.onCanel}>Cancel</button>
         </form>
     )
 }

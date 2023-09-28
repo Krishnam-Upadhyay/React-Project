@@ -4,6 +4,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import ProductList from './Components/ProductList/ProductList';
 import CreateProduct from "./Components/CreateProduct/CreateProduct";
 import { useState } from "react";
+import FilterProduct from './Components/FilterProduct/FilterProduct'
 
 let products = [
   {
@@ -52,16 +53,37 @@ let products = [
 
 export default function App() {
   const [newProductList, updateProductList] = useState(products);
+  const [filterTextValue, setFilterTextValue] = useState('all');
+
+  let filteredProduct = newProductList.filter((product => {
+    if (filterTextValue == 'available') {
+
+      return product.isAvailable == true;
+    } else if (filterTextValue == 'unavailable') {
+      return product.isAvailable == false;
+    } else {
+      return product;
+    }
+  }))
 
   const createProduct = (product) => {
+    product.pID = newProductList.length + 1;
     updateProductList([product, ...newProductList]);
 
   }
-  return (
-    <div>
+  const onFilterValueSelected = (filterValue) => {
+    setFilterTextValue(filterValue);
+
+  }
+
+  return (<div className="row">
+    <div className="col-lg-8 mx-auto">
+
       <CreateProduct createProduct={createProduct} />
-      <ProductList products={newProductList} />
+      <FilterProduct onFilterValueSelected={onFilterValueSelected} />
+      <ProductList products={filteredProduct} />
     </div>
+  </div>
   );
 
 
