@@ -23,7 +23,7 @@ const ProductDetails = (props) => {
     return (
         <div className="d-flex align-items-center justify-content-start mt-1">
             <h6 className="font-weight-bold my-2" style={{ marginRight: 30 }}>${props.price}</h6>
-            <Button eventHandler={decrementtEventHandler}>-</Button>
+            <Button eventHandler={decrementtEventHandler} disabled={productCont == 0}>-</Button>
             <span style={props.style}>{productCont}</span>
             <Button eventHandler={incrementEventHandler}>+</Button>
             <span className={badgeClass + (props.isAvailable ? 'bg-success' : 'bg-danger')}>{props.isAvailable ? "Available" : "UnAvailable"}</span>

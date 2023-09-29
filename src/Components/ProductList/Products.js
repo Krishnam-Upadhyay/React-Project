@@ -17,7 +17,7 @@ const Products = (props) => {
 
 
     return (
-        <li className="list-group-item">
+        <li className="list-group-item" style={{ backgroundColor: props.isAvailable ? "white" : 'gray' }}>
             <div className="media align-items-lg-center flex-column flex-lg-row p-3 d-flex">
                 <div className="media-body order-2 order-lg-1">
                     <h5 className="mt-0 font-weight-bold mb-2">{props.name}</h5>
@@ -25,7 +25,7 @@ const Products = (props) => {
                     <ProductDetails price={props.price} isAvailable={props.isAvailable} style={style} >
 
                     </ProductDetails>
-                </div><img src={props.imageUrl} alt="Generic placeholder image" width="200" className="ml-lg-5 order-1 order-lg-2" />
+                </div><img src={props.imageUrl} alt="Generic placeholder image" width="100" className="ml-lg-5 order-1 order-lg-2" />
             </div>
         </li>
     );
